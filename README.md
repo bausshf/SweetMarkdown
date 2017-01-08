@@ -40,7 +40,7 @@ A D language implementation for code-blocks.
 
 *Welcome* to my example /e-book/.
 
-[font-size: 10|color: #0000ff]Find the source at: {github.com}[]
+[font-size: 10|color: #0000ff]Find the source at: {https://github.com/bausshf/SweetMarkdown}[]
 
 // Forces a page break so the code example goes on a new page.
 <>
