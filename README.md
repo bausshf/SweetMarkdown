@@ -56,3 +56,165 @@ void main() {
 }
 '''
 ```
+
+# Syntax-reference
+
+## #title
+Represents a title.
+
+Example:
+```
+#My title
+```
+
+## *boldtext*
+Represents bold text.
+
+Example:
+```
+*My bold text*
+```
+
+## /italictext/
+Represents italic text.
+
+Example:
+```
+/My italic text/
+```
+
+## ---
+Represents a line-break (hr-tag)
+
+Example:
+```
+---
+```
+
+## {url}
+Represents a link.
+
+Example:
+```
+{https://github.com/bausshf/SweetMarkdown}
+```
+
+## <>
+Represents a page-break.
+
+Example:
+```
+<>
+```
+
+## [styles]
+Represents styling.
+
+Example:
+```
+[font-size: 12|color: blue]
+```
+
+## []
+Represents the ending of styling.
+
+Example:
+```
+[]
+```
+
+## '''language
+Represents a code-block.
+
+Example:
+```
+'''D
+import std.stdio;
+
+// Hello World Example
+void main() {
+    writeln("Hello World!");
+}
+'''
+```
+
+## &resource
+Represents a resource.
+
+There are 4 types of resources.
+
+* .js
+  * Will be included as script tag.
+* .html/.htm/.xhtml
+  * Will be mixed in as html when mixed in using mixin statements.
+* .smd
+  * Will include settings from the specified sweet-markdown file.
+  * Content can be mixed in using a mixin statement.
+* .css
+  * Will include a stylesheet
+  * Pagenumbers can include stylesheets with =pn:stylesheet.css=
+  
+Example:
+```
+&settings.smd
+```
+
+## =resource=
+Represents a resource mixin, which will mixin the content of the specified resource.
+
+Example:
+```
+=copyrightstatement.smd=
+```
+
+Note: There is a special resource that can be used: =pn= which will insert page number. (Only if pagenumbers are defined)
+
+To style the pagenumber use =pn:stylingresource.css=
+
+## (setting:value)
+Represents a metadata setting.
+
+Example:
+```
+(pagenumbers: true)
+```
+
+Settings:
+* pagenumbers (true/false)
+  * Defines a boolean value whether page numbers should be displayed or not.
+* code-block type (value)
+  * Code-block settings are advanced. There will be more details on them later.
+* fontsize (value)  
+  * Will set a specific font-size for the page. (Default is pixels, supports specifications such as em ex. 14em)
+  
+## **
+Represents a singleline comment.
+
+Comments are not included in the final document.
+
+Example:
+```
+** This is my comment.
+```
+
+## /** **/
+Represents a multiline comment.
+
+Multiline comments are not included in the final document.
+
+Example:
+```
+/**
+This is my multiline comment.
+**/
+```
+
+## !html html!
+Represents a html block.
+
+Example:
+```
+!html
+<p>This is a html paragraph.</p>
+html!
+```
