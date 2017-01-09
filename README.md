@@ -342,7 +342,7 @@ Output:
 </ul>
 ```
 
-## -#
+## -&#35;
 Represents a numeric list.
 
 Each # represents the indentation of the item.
