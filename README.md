@@ -242,3 +242,37 @@ Example:
 ```
 \tThis text is indent by one tab.
 ```
+
+## -*
+Represents a dotted list.
+
+Each * represents the indentation of the item
+
+Example:
+```
+-* This is the first item.
+-** This is a child to the first item
+-* This is the second item
+```
+
+## -#
+Represents a numeric list.
+
+Each # represents the indentation of the item.
+
+Example:
+```
+-# This will have number 1
+-## This is an inner child, but will also have number 1
+-# This will have number 2
+```
+
+## |column|column|...|
+Represents a table.
+
+Example:
+```
+|Header-column-1|Header-column-2|
+|Row-1-column-1|Row-1-column-2|
+|Row-2-column-1|Row-2-column-2|
+```
