@@ -66,6 +66,10 @@ Example:
 ```
 #My title
 ```
+Output:
+```
+<h1>My title</h1>
+```
 
 ## *boldtext*
 Represents bold text.
@@ -73,6 +77,10 @@ Represents bold text.
 Example:
 ```
 *My bold text*
+```
+Output:
+```
+<b>My bold text</b>
 ```
 
 ## /italictext/
@@ -82,6 +90,11 @@ Example:
 ```
 /My italic text/
 ```
+Output:
+```
+<i>My italic text</i>
+```
+
 
 ## ---
 Represents a line-break (hr-tag)
@@ -91,13 +104,25 @@ Example:
 ---
 ```
 
-## {url}
+Output:
+```
+<hr>
+```
+
+## {url} or {name:url}
 Represents a link.
 
 Example:
 ```
 {https://github.com/bausshf/SweetMarkdown}
+{sweet-markdown:https://github.com/bausshf/SweetMarkdown}
 ```
+Output:
+```
+<a href="https://github.com/bausshf/SweetMarkdown">https://github.com/bausshf/SweetMarkdown</a>
+<a href="https://github.com/bausshf/SweetMarkdown">sweet-markdown</a>
+```
+
 
 ## <>
 Represents a page-break.
@@ -105,6 +130,10 @@ Represents a page-break.
 Example:
 ```
 <>
+```
+Output:
+```
+<p style="page-break-after:always;"></p>
 ```
 
 ## [styles]
@@ -114,6 +143,10 @@ Example:
 ```
 [font-size: 12|color: blue]
 ```
+Output:
+```
+<span style="font-size: 12px; color: blue;">
+```
 
 ## []
 Represents the ending of styling.
@@ -122,6 +155,11 @@ Example:
 ```
 []
 ```
+Output:
+```
+</span>
+```
+
 
 ## '''language
 Represents a code-block.
@@ -136,6 +174,20 @@ void main() {
     writeln("Hello World!");
 }
 '''
+```
+
+Output: (Excluded syntax-highlit styling)
+```
+<div class="smd-code-block">
+<pre><code>
+import std.stdio;
+
+// Hello World Example;
+void main() {
+    writeln("Hello World!");
+}
+</code></pre>
+</div>
 ```
 
 ## &resource
@@ -196,6 +248,10 @@ Example:
 ```
 ** This is my comment.
 ```
+Output:
+```
+
+```
 
 ## /** **/
 Represents a multiline comment.
@@ -208,6 +264,10 @@ Example:
 This is my multiline comment.
 **/
 ```
+Output:
+```
+
+```
 
 ## !html html!
 Represents a html block.
@@ -218,6 +278,10 @@ Example:
 <p>This is a html paragraph.</p>
 html!
 ```
+Output:
+```
+<p>This is a html paragraph.</p>
+```
 
 ## :imagesrc:
 Represents an image.
@@ -225,6 +289,10 @@ Represents an image.
 Example:
 ```
 :myimage.png:
+```
+Output:
+```
+<img src="myimage.png" alt="">
 ```
 
 ## \s
@@ -234,13 +302,21 @@ Example:
 ```
 \sThis text is indent by one space.
 ```
+Output:
+```
+&nbsp;
+```
 
 ## \t
-Represents a tab either before or after a line.
+Represents a tab (Default is 4 spaces, but can be controlled with the 'tab-count' setting.) either before or after a line.
 
 Example:
 ```
 \tThis text is indent by one tab.
+```
+Output:
+```
+&nbsp;&nbsp;&nbsp;&nbsp;
 ```
 
 ## -*
@@ -254,6 +330,17 @@ Example:
 -** This is a child to the first item
 -* This is the second item
 ```
+Output:
+```
+<ul>
+  <li>This is the first item.
+    <ul>
+      <li>This is a child to the first item</li>
+    </ul>
+  </li>
+  <li>This is the second item.</li>
+</ul>
+```
 
 ## -#
 Represents a numeric list.
@@ -266,6 +353,17 @@ Example:
 -## This is an inner child, but will also have number 1
 -# This will have number 2
 ```
+Output:
+```
+<ol>
+  <li>This will have number 1
+    <ol>
+      <li>This is an inner child, but will also have number 1</li>
+    </ol>
+  </li>
+  <li>This will have number 2</li<
+</ol>
+```
 
 ## |column|column|...|
 Represents a table.
@@ -275,4 +373,21 @@ Example:
 |Header-column-1|Header-column-2|
 |Row-1-column-1|Row-1-column-2|
 |Row-2-column-1|Row-2-column-2|
+```
+Output:
+```
+<table>
+  <tr>
+    <th>Header-column</h>
+    <th>header-column-2</th>
+  </tr>
+  <tr>
+    <td>Row-1-column-1</td>
+    <td>Row-1-column-2</td>
+  </tr>
+  <tr>
+    <td>Row-2-column-1</td>
+    <td>Row-2-column-2</td>
+  </tr>
+</table>
 ```
