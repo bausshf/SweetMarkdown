@@ -218,3 +218,11 @@ Example:
 <p>This is a html paragraph.</p>
 html!
 ```
+
+## :imagesrc:
+Represents an image.
+
+Example:
+```
+:myimage.png:
+```
