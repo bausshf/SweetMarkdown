@@ -226,3 +226,19 @@ Example:
 ```
 :myimage.png:
 ```
+
+## \s
+Represents a space either before or after a line.
+
+Example:
+```
+\sThis text is indent by one space.
+```
+
+## \t
+Represents a tab either before or after a line.
+
+Example:
+```
+\tThis text is indent by one tab.
+```
